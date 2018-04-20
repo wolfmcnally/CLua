@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CLua_Example' do
+  pod 'CLua', :path => '../'
+
+  target 'CLua_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
