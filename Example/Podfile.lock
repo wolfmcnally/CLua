@@ -1,0 +1,16 @@
+PODS:
+  - CLua (0.1.0)
+
+DEPENDENCIES:
+  - CLua (from `../`)
+
+EXTERNAL SOURCES:
+  CLua:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CLua: 668cde60e67f40e0086e5d28a45902342a91dd99
+
+PODFILE CHECKSUM: 3e17f257ee4b6f7e9ce9f8eb9cedfbe9ed4d143c
+
+COCOAPODS: 1.5.0

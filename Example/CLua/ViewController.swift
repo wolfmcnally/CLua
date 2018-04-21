@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  CLua
 //
-//  Created by ironwolf on 04/20/2018.
-//  Copyright (c) 2018 ironwolf. All rights reserved.
+//  Created by Wolf McNally on 04/20/2018.
+//  Copyright (c) 2018 Wolf McNally. All rights reserved.
 //
 
 import UIKit

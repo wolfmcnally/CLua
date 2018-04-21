@@ -1,11 +1,11 @@
 use_frameworks!
 
 target 'CLua_Example' do
+  platform :ios, '9.3'
+
   pod 'CLua', :path => '../'
 
   target 'CLua_Tests' do
     inherit! :search_paths
-
-    
   end
 end

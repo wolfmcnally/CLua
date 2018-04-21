@@ -1,6 +1,5 @@
 # CLua
 
-[![CI Status](http://img.shields.io/travis/ironwolf/CLua.svg?style=flat)](https://travis-ci.org/ironwolf/CLua)
 [![Version](https://img.shields.io/cocoapods/v/CLua.svg?style=flat)](http://cocoapods.org/pods/CLua)
 [![License](https://img.shields.io/cocoapods/l/CLua.svg?style=flat)](http://cocoapods.org/pods/CLua)
 [![Platform](https://img.shields.io/cocoapods/p/CLua.svg?style=flat)](http://cocoapods.org/pods/CLua)
@@ -22,7 +21,7 @@ pod 'CLua'
 
 ## Author
 
-ironwolf, wolf@wolfmcnally.com
+Wolf McNally, wolf@wolfmcnally.com
 
 ## License
 
