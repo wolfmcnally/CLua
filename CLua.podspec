@@ -19,6 +19,7 @@ Does not include a Swift wrapper or conveniences of any kind. For those, see Wol
   s.macos.deployment_target = '10.13'
   s.tvos.deployment_target = '11.0'
 
-  s.source_files = [ 'lua/*.c', 'lua/lua.h', 'lua/lauxlib.h', 'lua/lualib.h', 'lua/luaconf.h' ]
-  s.exclude_files = [ 'lua/lbitlib.c', 'lua/lua.c' ]
+  s.source_files = [ 'lua/*.{c,h}' ]
+  s.exclude_files = [ 'lua/lbitlib.c', 'lua/lua.c', 'lua/ltests.h' ]
+  s.private_header_files = [ 'lua/ljumptab.h' ]
 end
