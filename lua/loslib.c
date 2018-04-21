@@ -135,23 +135,22 @@ static time_t l_checktime (lua_State *L, int arg) {
 #endif				/* } */
 /* }================================================================== */
 
+#if defined(__APPLE__)
+    #include "TargetConditionals.h"
 
-#ifndef LUA_IOS
-    #if defined(__APPLE__)
-        #include "TargetConditionals.h"
+    #define LUA_OS_TMPNAME_AVAILABLE 0
 
-        #if TARGET_OS_IOS
-            #define LUA_IOS 1
-        #else
-            #define LUA_IOS 0
-        #endif
-
+    #if TARGET_OS_OSX
+        #define LUA_OS_EXECUTE_AVAILABLE 1
     #else
-        #define LUA_IOS 0
+        #define LUA_OS_EXECUTE_AVAILABLE 0
     #endif
+#else
+    #define LUA_OS_TMPNAME_AVAILABLE 1
+    #define LUA_OS_EXECUTE_AVAILABLE 1
 #endif
 
-#if !LUA_IOS
+#if LUA_OS_EXECUTE_AVAILABLE
 static int os_execute (lua_State *L) {
   const char *cmd = luaL_optstring(L, 1, NULL);
   int stat = system(cmd);
@@ -178,7 +177,7 @@ static int os_rename (lua_State *L) {
 }
 
 
-#if !LUA_IOS
+#if LUA_OS_TMPNAME_AVAILABLE
 static int os_tmpname (lua_State *L) {
   char buff[LUA_TMPNAMBUFSIZE];
   int err;
@@ -404,7 +403,7 @@ static const luaL_Reg syslib[] = {
   {"clock",     os_clock},
   {"date",      os_date},
   {"difftime",  os_difftime},
-#if !LUA_IOS
+#if LUA_OS_EXECUTE_AVAILABLE
   {"execute",   os_execute},
 #endif
   {"exit",      os_exit},
@@ -413,7 +412,7 @@ static const luaL_Reg syslib[] = {
   {"rename",    os_rename},
   {"setlocale", os_setlocale},
   {"time",      os_time},
-#if !LUA_IOS
+#if LUA_OS_TMPNAME_AVAILABLE
   {"tmpname",   os_tmpname},
 #endif
   {NULL, NULL}
@@ -427,4 +426,3 @@ LUAMOD_API int luaopen_os (lua_State *L) {
   luaL_newlib(L, syslib);
   return 1;
 }
-
